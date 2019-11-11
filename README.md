@@ -1,6 +1,5 @@
 # Login-System
-Online Login System using MongoDB, NodeJS, ExpressJS, Mongoose, PassportJS, Bcrypt, EJS and Javascript
-
+Online Login System 
 Author :- Harsh Wadhawe
 
 This is a Login System made using : 
@@ -19,6 +18,10 @@ EJS
 REST APIs
 MongoDB
 Mongoose
+and the password are encrypted and stored using and 
+BCrypt
+Passport.JS
+in MongoDB Atlas
 Deployment with GitHub Pages, Heroku and MongoDB Atlas
 
 
