@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3">Forgot Password</h1>
+      <% include ./partials/messages %>
+      <form action="/users/forgot" method="POST">
+        <div class="form-group">
+          <label for="username">Application Number</label>
+          <input
+            type="number"
+            id="username"
+            name="username"
+            class="form-control"
+            placeholder="Enter registered Application Number"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send</button>
+      </form>
+      <p class="lead mt-4">
+        No Account? <a href="/users/register">Register</a>
+      </p>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') %>

@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+
+
+    <img id="logo" src="images/Mindspark.jpg" alt="">
+  <div class="centered container">
+    <h1 class="display-3" id="dashboard">Certificate</h1>
+    <hr>
+    <p class="lead mb-3">Welcome <%= user.firstName %> <%= user.lastName %></p>
+    <section >
+      <canvas id="canvas" width="1200" height="650">
+        <img id = "certificate"src="images/certificate.jpg" alt="image not found">
+      </canvas>
+    </section>
+    <a  id="download" download="certificate.png" role="button">
+    <button class="btn btn-light btn-lg" type="button" onClick="download()" >Download</button>
+    </a>
+    <a class="btn btn-dark btn-lg" href="/users/logout" role="button">Log Out</a>
+    <br><br>
+  </div>
+
+
+<script>
+window.onload = function() {
+  var c = document.getElementById("canvas");
+  var ctx = c.getContext("2d");
+  var img = document.getElementById("certificate");
+  ctx.drawImage(img, 170, 30,800,600);
+  ctx.font = "30px Timesnewroman";
+  ctx.fillText("<%= user.firstName%> <%=user.lastName%>", 443, 277);
+  ctx.font = "18px Arial";
+  ctx.fillText("Application No : <%= user.username%>", 685 , 587);
+}
+
+function download() {
+var download = document.getElementById("download");
+var image = document.getElementById("canvas").toDataURL("image/png")
+    .replace("image/png", "image/octet-stream");
+download.setAttribute("href", image);
+//download.setAttribute("download","archive.png");
+}
+
+</script>
+
+<%- include('partials/footer') %>
